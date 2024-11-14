@@ -1,43 +1,38 @@
 # 2D Game Overview
 
 ## Current State of the Game
-The current version of the game is a basic 2D framework that includes essential elements for rendering a background, animating a character, and handling user input through a game loop.
+The game is a basic 2D framework featuring background rendering, character animation, and user input handling within a game loop.
 
-### Key Features Implemented
+### Key Features
 
 #### Background and Map
-- **Background Creation**:
-  - Background sprites have been added.
-  - `map01.txt` has been created for defining the map layout.
-- **World Map and Camera**:
-  - A world map has been added, allowing for a larger game environment.
-  - The camera now follows the player, providing a dynamic view of the game.
-  - The map does not load all at once to conserve resources; it loads incrementally as the player moves.
-- **TileManager Class**:
-  - Integrated into `GamePanel.java`.
-  - Methods `draw()`, `loadMap()`, and `getTileImage()` implemented.
-- **Tile Class**:
-  - Main variables such as `image` and `collision` initialized.
+- Background sprites and `map01.txt` for map layout created.
+- World map with a camera following the player for a dynamic view.
+- Incremental map loading for resource efficiency.
+- **TileManager Class** integrated in `GamePanel.java` with `draw()`, `loadMap()`, and `getTileImage()` methods.
+- **Tile Class** initialized with variables like `image` and `collision`.
 
-#### Character Animation
-- **Character Animation and Movement**:
-  - `Player.java` includes methods `setDefaultValues()`, `update()`, and `draw()`.
-  - `getPlayerImage()` added for drawing character sprites.
-- **Entity Class**:
-  - Core variables added for character functionality.
-- **GamePanel.java**:
-  - `update()` and `paintComponent()` methods modified to support animation.
+#### Character Animation and Movement
+- `Player.java` includes methods for setting default values, updating, and drawing characters.
+- Character sprites drawn via `getPlayerImage()`.
+- **Entity Class** has core variables for character functionality.
+- Animation supported through updated `update()` and `paintComponent()` in `GamePanel.java`.
 
-#### Collision Detection
-- **Collision Implementation**:
-  - Collision logic for the player and various tiles has been added to enhance gameplay.
+#### Collision Detection and Game Loop
+- Collision logic for player interactions with tiles added.
+- Game loop in `GamePanel.java` handles panel size, updates, and movement.
+- **Input Handling** in `KeyHandler.java` supports movement with `w`, `a`, `s`, and `d` keys.
 
-#### Game Loop
-- **Game Loop Implementation**:
-  - `GamePanel.java` defines panel size, window size, frame updates, and movements.
-  - `Main.java` sets up the game window using `JFrame`.
-- **Input Handling**:
-  - `KeyHandler.java` includes `keyPressed()` and `keyReleased()` for player movement, supporting `w`, `a`, `s`, and `d` keys.
+### Objects and Interactions
+- **SuperObject.java** parent class added with `draw()` method.
+- Minor object variable additions in `GamePanel.java`.
+- **AssertSetter.java** includes `setObject()` for placing objects.
+- Added object classes:
+  - `OBJ_Key.java`
+  - `OBJ_Door.java`
+  - `OBJ_Chest.java`
+  - `OBJ_Boots.java`
+- Object sprites integrated.
 
 ## Summary
-The current build provides a solid foundation with map rendering, character animation, a camera that follows the player, collision detection for the character and tiles, and an optimized loading strategy for resource management. Future developments will include adding new gameplay mechanics, enhancing graphics, and improving overall interactions.
+The game has a foundational structure with map rendering, character animation, a following camera, basic collision detection, and resource-efficient map loading. Recent additions include interactive object classes and sprites without collision logic. Future improvements will focus on expanding gameplay mechanics, enhancing graphics, and refining interactions.
