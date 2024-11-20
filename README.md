@@ -19,7 +19,7 @@ The game is a basic 2D framework featuring background rendering, character anima
 - Animation supported through updated `update()` and `paintComponent()` in `GamePanel.java`.
 
 #### Collision Detection and Game Loop
-- Collision logic for player interactions with tiles added.
+- Collision logic for player interactions with tiles and objects added.
 - Game loop in `GamePanel.java` handles panel size, updates, and movement.
 - **Input Handling** in `KeyHandler.java` supports movement with `w`, `a`, `s`, and `d` keys.
 
