@@ -1,7 +1,7 @@
 # 2D Game Overview
 
 ## Current State of the Game
-The game is a basic 2D framework featuring background rendering, character animation, and user input handling within a game loop.
+The game is a basic 2D framework featuring background rendering, character animation, and user input handling within a game loop. The **basic version of the game has been completed**.
 
 # Game Development Project
 
@@ -39,6 +39,12 @@ The game is a basic 2D framework featuring background rendering, character anima
   - Collecting boots.
 - Background music added to enhance the game atmosphere.
 
+### UI Elements
+- **Timer**: Displays the time elapsed during gameplay.
+- **Key Counter**: Shows how many keys the player has collected.
+- **Interaction Messages**: Text prompts appear on-screen to guide the player when interacting with objects.
+- **End Game Screen**: When the player finds the chest, a congratulatory message is displayed along with the time taken to complete the game.
+
 ---
 
 ## Summary
@@ -46,4 +52,8 @@ The game has a foundational structure with map rendering, character animation, a
 - Integration of sound effects for specific object interactions.
 - Addition of background music.
 - Introduction of a new object: **Boots**.
-
+- Completion of the **basic version** with added UI elements:
+  - Timer.
+  - Key counter.
+  - Interaction messages.
+  - End game screen showing the player's completion time and a congratulatory message.
