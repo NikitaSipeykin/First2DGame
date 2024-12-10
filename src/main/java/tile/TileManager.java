@@ -1,9 +1,11 @@
 package tile;
 
 import main.GamePanel;
+import main.UtilityTool;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,27 +25,21 @@ public class TileManager {
   }
 
   public void getTileImage(){
-    try{
-      tile[0] = new Tile();
-      tile[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/New version/grass01.png"));
+      setup(0, "grass01", false);
+      setup(1, "wall", true);
+      setup(2, "water01", true);
+      setup(3, "earth", false);
+      setup(4, "tree", true);
+      setup(5, "road00", false);
+  }
 
-      tile[1] = new Tile();
-      tile[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/New version/wall.png"));
-      tile[1].collision = true;
-
-      tile[2] = new Tile();
-      tile[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/New version/water01.png"));
-      tile[2].collision = true;
-
-      tile[3] = new Tile();
-      tile[3].image = ImageIO.read(getClass().getResourceAsStream("/tiles/New version/earth.png"));
-
-      tile[4] = new Tile();
-      tile[4].image = ImageIO.read(getClass().getResourceAsStream("/tiles/New version/tree.png"));
-      tile[4].collision = true;
-
-      tile[5] = new Tile();
-      tile[5].image = ImageIO.read(getClass().getResourceAsStream("/tiles/New version/road00.png"));
+  public void setup(int index, String imageName, boolean collision){
+    UtilityTool uTool = new UtilityTool();
+    try {
+      tile[index] = new Tile();
+      tile[index].image = ImageIO.read(getClass().getResourceAsStream("/tiles/New version/" + imageName + ".png"));
+      tile[index].image = uTool.scaleImage(tile[index].image, gp.tileSize, gp.tileSize);
+      tile[index].collision = collision;
     }catch (IOException e){
       e.printStackTrace();
     }
