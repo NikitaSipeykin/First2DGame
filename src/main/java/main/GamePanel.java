@@ -4,7 +4,6 @@ import entity.Entity;
 import entity.Player;
 import object.SuperObject;
 import tile.TileManager;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,39 +11,34 @@ public class GamePanel extends JPanel implements Runnable{
   //screen settings
   final int originalTileSize = 16; //16x16 tiles
   final int scale = 3;
-
   public final int tileSize = originalTileSize * scale; //48x48 tiles
   public final int maxScreenCol = 16;
   public final int maxScreenRow = 12;
   public final int screenWidth = tileSize * maxScreenCol; //768 pixels
   public final int screenHeight = tileSize * maxScreenRow; //576 pixels
-
   //world settings
   public final int maxWorldCol = 50;
   public final int maxWorldRow = 50;
-
   //FPS
   int FPS = 60;
-
   //SYSTEM
   TileManager tileManager = new TileManager(this);
-  KeyHandler keyH = new KeyHandler(this);
+  public KeyHandler keyH = new KeyHandler(this);
   Sound music = new Sound();
   Sound sound = new Sound();
   public CollisionChecker cChecker = new CollisionChecker(this);
   public AssetSetter aSetter = new AssetSetter(this);
   public UI ui = new UI(this);
   Thread gameThread;
-
   //ENTITY AND OBJECTS
   public Player player = new Player(this, keyH);
   public SuperObject obj[] = new SuperObject[10];
   public Entity npc[] = new Entity[10];
-
   //game state
   public int gameState;
   public final int playState = 1;
   public final int pauseState = 2;
+  public final int dialogueState = 3;
 
   public GamePanel(){
     this.setPreferredSize(new Dimension(screenWidth, screenHeight));
