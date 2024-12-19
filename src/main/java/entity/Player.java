@@ -2,16 +2,12 @@ package entity;
 
 import main.GamePanel;
 import main.KeyHandler;
-import main.UtilityTool;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 public class Player extends Entity{
   KeyHandler keyH;
-
   public final int screenX;
   public final int screenY;
   int standCounter = 0;
@@ -58,14 +54,14 @@ public class Player extends Entity{
   public void update(){
 
     if (!moving){
-      if(keyH.rightPresed || keyH.upPresed || keyH.downPresed || keyH.leftPresed){
-        if(keyH.upPresed) {
+      if(keyH.rightPressed || keyH.upPressed || keyH.downPressed || keyH.leftPressed){
+        if(keyH.upPressed) {
           direction = "up";
-        } else if (keyH.downPresed) {
+        } else if (keyH.downPressed) {
           direction = "down";
-        } else if (keyH.leftPresed) {
+        } else if (keyH.leftPressed) {
           direction = "left";
-        } else if (keyH.rightPresed) {
+        } else if (keyH.rightPressed) {
           direction = "right";
         }
 
@@ -137,8 +133,12 @@ public class Player extends Entity{
 
   public void interactNPC(int i){
     if (i != 999){
-      System.out.println("You are hitting a NPC!");
+      if (gp.keyH.enterPressed){
+        gp.gameState = gp.dialogueState;
+        gp.npc[i].speak();
+      }
     }
+    gp.keyH.enterPressed = false;
   }
 
   public void draw(Graphics2D g2){
