@@ -1,4 +1,4 @@
-# 2D Adventure
+# 2D Adventure (extra fitch "character classes")
 
 **Game Description**  
 2D Adventure is a top-down action RPG written in Java. The game features dynamic combat elements, map exploration, and character progression.
