@@ -12,27 +12,27 @@ Currently implemented:
 - **Collision detection**
 - **Sound effects**
 - **Dialogue window with NPCs**
+- **Main screen**
 
 ### ✅ Planned Features:
-1. **Events**
-2. **Combat system**
-3. **Main screen**
-4. **Monsters and bosses**
-5. **Dungeons**
-6. **Cutscenes**
-7. **Game menu**
-8. **Progress saving**
-9. **Game Over screen**
-10. **Shop** for purchasing items
-11. **Improved NPC and enemy AI**
-12. **Character health and lives**
-13. **Inventory** and item usage
-14. **Item dropping** from inventory
-15. **Character status** (level, experience, etc.)
-16. **Variety of items and magic**
-17. **Map transitions**
-18. **Day and night cycle** with dynamic lighting
-19. **Tree chopping** and environmental interactions
+1. **Dungeons**
+2. **Cutscenes**
+3. **Game menu**
+4. **Progress saving**
+5. **Game Over screen**
+6. **Shop** for purchasing items
+7. **Improved NPC and enemy AI**
+8. **Character status** (level, experience, etc.)
+9. **Map transitions**
+10. **Day and night cycle** with dynamic lighting
+11. **Tree chopping** and environmental interactions
+12. **Item dropping** from inventory
+13. **Variety of items and magic**
+14. **Inventory** and item usage
+15. **Combat system**
+16. **Monsters and bosses**
+17. **Events**
+18. **Character health and lives**
 
 ---
 
