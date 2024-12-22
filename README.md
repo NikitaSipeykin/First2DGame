@@ -13,6 +13,7 @@ Currently implemented:
 - **Sound effects**
 - **Dialogue window with NPCs**
 - **Main screen**
+- **Character health and lives**
 
 ### ✅ Planned Features:
 1. **Dungeons**
@@ -32,7 +33,7 @@ Currently implemented:
 15. **Combat system**
 16. **Monsters and bosses**
 17. **Events**
-18. **Character health and lives**
+
 
 ---
 
