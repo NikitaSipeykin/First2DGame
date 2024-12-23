@@ -14,6 +14,7 @@ Currently implemented:
 - **Dialogue window with NPCs**
 - **Main screen**
 - **Character health and lives**
+- **Events**
 
 ### ✅ Planned Features:
 1. **Dungeons**
@@ -32,7 +33,7 @@ Currently implemented:
 14. **Inventory** and item usage
 15. **Combat system**
 16. **Monsters and bosses**
-17. **Events**
+
 
 
 ---
