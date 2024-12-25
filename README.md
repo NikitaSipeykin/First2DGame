@@ -15,24 +15,43 @@ Currently implemented:
 - **Main screen**
 - **Character health and lives**
 - **Events**
+- **Monsters**
 
 ### ✅ Planned Features:
-1. **Dungeons**
+1. **Ending**
 2. **Cutscenes**
-3. **Game menu**
-4. **Progress saving**
-5. **Game Over screen**
-6. **Shop** for purchasing items
-7. **Improved NPC and enemy AI**
-8. **Character status** (level, experience, etc.)
-9. **Map transitions**
-10. **Day and night cycle** with dynamic lighting
-11. **Tree chopping** and environmental interactions
-12. **Item dropping** from inventory
-13. **Variety of items and magic**
-14. **Inventory** and item usage
-15. **Combat system**
-16. **Monsters and bosses**
+3. **Bosses**
+4. **Dungeons**
+5. **Enter the dungeon**
+6. **Advanced dialogs**
+7. **Save and load**
+8. **Guard & Parry**
+9. **Combat system**
+10. **Mini Map**
+11. **Tile editor**
+12. **Day and Night**
+13. **Lantern**
+14. **Lighting**
+15. **Stackable items**
+16. **Object detection**
+17. **Knockback**
+18. **Pathfinding (npc)**
+19. **Trade**
+20. **Transitions between maps**
+21. **Saving config to a text file**
+22. **Options menu**
+23. **Full screen mode**
+24. **Particles**
+25. **Breaking objects**
+26. **Item drops**
+27. **Mana**
+28. **Projectiles**
+29. **Equip & using items**
+30. **Inventory**
+31. **Scrolling Message**
+32. **Character status**
+33. **Monster health bar**
+34. **Hit detection**
 
 
 
