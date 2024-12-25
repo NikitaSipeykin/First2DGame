@@ -11,8 +11,6 @@ public class Player extends Entity{
   public final int screenX;
   public final int screenY;
   int standCounter = 0;
-  boolean moving = false;
-  int pixelCounter = 0;
 
   public Player(GamePanel gp, KeyHandler keyH) {
     super(gp);
@@ -22,12 +20,12 @@ public class Player extends Entity{
     screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
 
     solidArea = new Rectangle();
-    solidArea.x = 1;
-    solidArea.y = 1;
+    solidArea.x = 8;
+    solidArea.y = 16;
     solidAreaDefaultX = solidArea.x;
     solidAreaDefaultY = solidArea.y;
-    solidArea.width = 46;
-    solidArea.height = 46;
+    solidArea.width = 32;
+    solidArea.height = 32;
 
     setDefaultValues();
     getPlayerImage();
@@ -59,7 +57,7 @@ public class Player extends Entity{
 
   public void update(){
 
-    if (!moving){
+
       if(keyH.rightPressed || keyH.upPressed || keyH.downPressed || keyH.leftPressed){
         if(keyH.upPressed) {
           direction = "up";
@@ -71,7 +69,7 @@ public class Player extends Entity{
           direction = "right";
         }
 
-        moving = true;
+
 
         //check tile collision
         collisionON = false;
@@ -93,19 +91,6 @@ public class Player extends Entity{
         gp.eHandler.checkEvent();
         gp.keyH.enterPressed = false;
 
-
-
-
-      }else {
-        standCounter++;
-        if (standCounter == 20){
-          spriteNumber = 1;
-          standCounter = 0;
-        }
-      }
-    }
-
-      if (moving){
         //if collision is false player can't move
         if (!collisionON){
           switch (direction){
@@ -123,7 +108,6 @@ public class Player extends Entity{
               break;
           }
         }
-
         spriteCounter++;
         if(spriteCounter > 10){
           if (spriteNumber == 1) {
@@ -132,13 +116,15 @@ public class Player extends Entity{
             spriteNumber = 1;
           }
           spriteCounter = 0;
-        }
-        pixelCounter += speed;
-        if(pixelCounter == 48){
-          moving = false;
-          pixelCounter = 0;
+        }else {
+          standCounter++;
+          if (standCounter == 20){
+            spriteNumber = 1;
+            standCounter = 0;
+          }
         }
       }
+
 
       //this needs to be outside of key if statement!
     if(invincible){
