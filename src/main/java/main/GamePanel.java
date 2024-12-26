@@ -35,9 +35,9 @@ public class GamePanel extends JPanel implements Runnable{
   Thread gameThread;
   //ENTITY AND OBJECTS
   public Player player = new Player(this, keyH);
-  public Entity obj[] = new Entity[10];
-  public Entity npc[] = new Entity[10];
-  public Entity monster[] = new Entity[20];
+  public Entity[] obj = new Entity[10];
+  public Entity[] npc = new Entity[10];
+  public Entity[] monster = new Entity[20];
   ArrayList<Entity> entityList = new ArrayList<>();
   //game state
   public int gameState;
@@ -197,9 +197,7 @@ public class GamePanel extends JPanel implements Runnable{
       }
 
       //empty entity list
-      for (int i = 0; i < entityList.size(); i++) {
-        entityList.remove(i);
-      }
+      entityList.clear();
 //      player.draw(g2);
       ui.draw(g2);
     }
