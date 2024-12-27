@@ -17,6 +17,7 @@ Currently implemented:
 - **Events**
 - **Monsters**
 - **Hit detection**
+- **Monster health bar**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,7 @@ Currently implemented:
 30. **Inventory**
 31. **Scrolling Message**
 32. **Character status**
-33. **Monster health bar**
+
 
 
 
