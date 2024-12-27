@@ -19,6 +19,7 @@ Currently implemented:
 - **Hit detection**
 - **Monster health bar**
 - **Character status**
+- **Scrolling Message**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,6 @@ Currently implemented:
 28. **Projectiles**
 29. **Equip & using items**
 30. **Inventory**
-31. **Scrolling Message**
 
 ---
 
