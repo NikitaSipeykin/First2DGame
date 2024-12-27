@@ -20,6 +20,7 @@ Currently implemented:
 - **Monster health bar**
 - **Character status**
 - **Scrolling Message**
+- **Inventory**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,6 @@ Currently implemented:
 27. **Mana**
 28. **Projectiles**
 29. **Equip & using items**
-30. **Inventory**
 
 ---
 
