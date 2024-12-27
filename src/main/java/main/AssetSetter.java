@@ -4,6 +4,7 @@ package main;
 import entity.NPC_OldMan;
 import monster.MON_GreenSlime;
 import object.OBJ_Door;
+import object.OBJ_Key;
 
 public class AssetSetter {
   GamePanel gp;
@@ -14,16 +15,15 @@ public class AssetSetter {
 
   public void setObject(){
 
+    gp.obj[0] = new OBJ_Key(gp);
+    gp.obj[0].worldX = gp.tileSize*25;
+    gp.obj[0].worldY = gp.tileSize*19;
   }
 
   public void setNPC(){
     gp.npc[0] = new NPC_OldMan(gp);
     gp.npc[0].worldX = gp.tileSize*21;
     gp.npc[0].worldY = gp.tileSize*21;
-
-    gp.npc[1] = new NPC_OldMan(gp);
-    gp.npc[1].worldX = gp.tileSize*9;
-    gp.npc[1].worldY = gp.tileSize*10;
   }
 
   public void setMonster(){
