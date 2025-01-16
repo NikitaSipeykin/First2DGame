@@ -22,6 +22,7 @@ Currently implemented:
 - **Scrolling Message**
 - **Inventory**
 - **Equip & using items**
+- **Projectiles**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,6 @@ Currently implemented:
 25. **Breaking objects**
 26. **Item drops**
 27. **Mana**
-28. **Projectiles**
 
 ---
 
