@@ -21,6 +21,7 @@ Currently implemented:
 - **Character status**
 - **Scrolling Message**
 - **Inventory**
+- **Equip & using items**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,6 @@ Currently implemented:
 26. **Item drops**
 27. **Mana**
 28. **Projectiles**
-29. **Equip & using items**
 
 ---
 
