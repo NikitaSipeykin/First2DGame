@@ -23,6 +23,7 @@ Currently implemented:
 - **Inventory**
 - **Equip & using items**
 - **Projectiles**
+- **Mana**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,6 @@ Currently implemented:
 24. **Particles**
 25. **Breaking objects**
 26. **Item drops**
-27. **Mana**
 
 ---
 
