@@ -26,6 +26,7 @@ Currently implemented:
 - **Mana**
 - **Item drops**
 - **Breaking objects**
+- **Particles**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,6 @@ Currently implemented:
 21. **Saving config to a text file**
 22. **Options menu**
 23. **Full screen mode**
-24. **Particles**
 
 ---
 
