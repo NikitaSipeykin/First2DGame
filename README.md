@@ -24,6 +24,7 @@ Currently implemented:
 - **Equip & using items**
 - **Projectiles**
 - **Mana**
+- **Item drops**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,6 @@ Currently implemented:
 23. **Full screen mode**
 24. **Particles**
 25. **Breaking objects**
-26. **Item drops**
 
 ---
 
