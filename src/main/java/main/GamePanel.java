@@ -7,6 +7,7 @@ import tile_interactive.InteractiveTile;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -16,13 +17,19 @@ public class GamePanel extends JPanel implements Runnable{
   final int originalTileSize = 16; //16x16 tiles
   final int scale = 3;
   public final int tileSize = originalTileSize * scale; //48x48 tiles
-  public final int maxScreenCol = 16;
+  public final int maxScreenCol = 20;
   public final int maxScreenRow = 12;
-  public final int screenWidth = tileSize * maxScreenCol; //768 pixels
+  public final int screenWidth = tileSize * maxScreenCol; //960 pixels
   public final int screenHeight = tileSize * maxScreenRow; //576 pixels
   //world settings
   public final int maxWorldCol = 50;
   public final int maxWorldRow = 50;
+  //for full screen
+  int screenWidth2 = screenWidth;
+  int screenHeight2 = screenHeight;
+  BufferedImage tempScreen;
+  Graphics2D g2;
+
   //FPS
   int FPS = 60;
 
@@ -70,6 +77,22 @@ public class GamePanel extends JPanel implements Runnable{
     aSetter.setInteractiveTile();
 //    playMusic(0);
     gameState = titleState;
+    tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB_PRE);
+    g2 = (Graphics2D)tempScreen.getGraphics();
+
+    setFullScreen();
+  }
+
+  public void setFullScreen(){
+    //get local screen device
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    GraphicsDevice gd = ge.getDefaultScreenDevice();
+    gd.setFullScreenWindow(Main.window);
+
+    //get full screen width and height
+    screenWidth2 = Main.window.getWidth();
+    screenHeight2 = Main.window.getHeight();
+
   }
 
   public void setGameThread(){
@@ -77,61 +100,65 @@ public class GamePanel extends JPanel implements Runnable{
     gameThread.start();
   }
 
-  @Override
-  public void run() {
-    double drawInterval = 1000000000d/FPS;
-    double nextDrawTime = System.nanoTime() + drawInterval;
-    while (gameThread != null){
-      //
-      //1 UPDATE: update information such as character positions
-      update();
-      //2 DRAW: draw the screen with updated information
-      repaint();
-
-      try {
-        double remainingTime = nextDrawTime - System.nanoTime();
-        remainingTime = remainingTime/1000000d;
-
-        if (remainingTime < 0){
-          remainingTime = 0d;
-        }
-
-        Thread.sleep((long) remainingTime);
-        nextDrawTime += drawInterval;
-      } catch (InterruptedException e) {
-        throw new RuntimeException(e);
-      }
-    }
-  }
-
-//  //alternative method
 //  @Override
 //  public void run() {
 //    double drawInterval = 1000000000d/FPS;
-//    double delta = 0;
-//    long lastTime = System.nanoTime();
-//    long currentTime;
-//    long timer = 0;
-//    int drawCount = 0;
-//
+//    double nextDrawTime = System.nanoTime() + drawInterval;
 //    while (gameThread != null){
-//      currentTime = System.nanoTime();
-//      delta += (currentTime - lastTime) / drawInterval;
-//      timer += (currentTime - lastTime);
-//      lastTime = currentTime;
-//      if(delta >= 1){
-//        update();
-//        repaint();
-//        delta--;
-//        drawCount++;
-//      }
-//      if(timer >= 1000000000){
-//        System.out.println("FPS: " + drawCount);
-//        drawCount = 0;
-//        timer = 0;
+//      //
+//      //1 UPDATE: update information such as character positions
+//      update();
+//      //2 DRAW: draw the screen with updated information
+//      repaint();
+//
+//      try {
+//        double remainingTime = nextDrawTime - System.nanoTime();
+//        remainingTime = remainingTime/1000000d;
+//
+//        if (remainingTime < 0){
+//          remainingTime = 0d;
+//        }
+//
+//        Thread.sleep((long) remainingTime);
+//        nextDrawTime += drawInterval;
+//      } catch (InterruptedException e) {
+//        throw new RuntimeException(e);
 //      }
 //    }
 //  }
+
+  //alternative method
+  @Override
+  public void run() {
+    double drawInterval = 1000000000d/FPS;
+    double delta = 0;
+    long lastTime = System.nanoTime();
+    long currentTime;
+    long timer = 0;
+    int drawCount = 0;
+
+    while (gameThread != null){
+      currentTime = System.nanoTime();
+      delta += (currentTime - lastTime) / drawInterval;
+      timer += (currentTime - lastTime);
+      lastTime = currentTime;
+
+      if(delta >= 1){
+        update();
+//        repaint();
+        drawToTempScreen(); //draw everything to bufferedImage
+        drawToScreen(); //draw the bufferedImage to the screen
+        delta--;
+        drawCount++;
+      }
+
+      if(timer >= 1000000000){
+        System.out.println("FPS: " + drawCount);
+        drawCount = 0;
+        timer = 0;
+      }
+    }
+  }
 
   public void update(){
     if (gameState == playState){
@@ -183,10 +210,7 @@ public class GamePanel extends JPanel implements Runnable{
     }
   }
 
-  public void paintComponent(Graphics g){
-    super.paintComponent(g);
-    Graphics2D g2 = (Graphics2D)g;
-
+  public void drawToTempScreen(){
     //debug
     long drawStart = 0;
     if (keyH.showDebugText){
@@ -285,7 +309,118 @@ public class GamePanel extends JPanel implements Runnable{
       g2.drawString("Draw Time: " + passed, x, y);
     }
 
-    g2.dispose();
+  }
+
+//  @Override
+//  public void paintComponent(Graphics g){
+//    super.paintComponent(g);
+//    Graphics2D g2 = (Graphics2D)g;
+//
+//    //debug
+//    long drawStart = 0;
+//    if (keyH.showDebugText){
+//      drawStart = System.nanoTime();
+//    }
+//
+//    //title screen
+//    if (gameState == titleState){
+//      ui.draw(g2);
+//    }
+//    //others
+//    else {
+//      //tile
+//      tileManager.draw(g2);
+//
+//      //interactive tile
+//      for (int i = 0; i < iTile.length; i++) {
+//        if (iTile[i] != null){
+//          iTile[i].draw(g2);
+//        }
+//      }
+//
+//      //add entities to the list
+//      entityList.add(player);
+//
+//      for (int i = 0; i < npc.length; i++) {
+//        if (npc[i] != null){
+//          entityList.add(npc[i]);
+//        }
+//      }
+//
+//      for (int i = 0; i < obj.length; i++) {
+//        if (obj[i] != null){
+//          entityList.add(obj[i]);
+//        }
+//      }
+//
+//      for (int i = 0; i < monster.length; i++) {
+//        if (monster[i] != null){
+//          entityList.add(monster[i]);
+//        }
+//      }
+//
+//      for (int i = 0; i < projectileList.size(); i++) {
+//        if (projectileList.get(i) != null){
+//          entityList.add(projectileList.get(i));
+//        }
+//      }
+//
+//      for (int i = 0; i < particleList.size(); i++) {
+//        if (particleList.get(i) != null){
+//          entityList.add(particleList.get(i));
+//        }
+//      }
+//
+//      //sort
+//      Collections.sort(entityList, new Comparator<Entity>() {
+//        @Override
+//        public int compare(Entity e1, Entity e2) {
+//          int result = Integer.compare(e1.worldY, e2.worldY);
+//          return result;
+//        }
+//      });
+//
+//      //draw entities
+//      for (int i = 0; i < entityList.size(); i++) {
+//        entityList.get(i).draw(g2);
+//      }
+//
+//      //empty entity list
+//      entityList.clear();
+////      player.draw(g2);
+//      ui.draw(g2);
+//    }
+//
+//    //debug
+//    if (keyH.showDebugText){
+//      long drawEnd = System.nanoTime();
+//      long passed = drawEnd - drawStart;
+//
+//      g2.setFont(new Font("Arial", Font.PLAIN, 20));
+//      g2.setColor(Color.white);
+//      int x = 10;
+//      int y = 400;
+//      int lineHeight = 20;
+//
+//      g2.drawString("WorldX" + player.worldX, x, y);
+//      y += lineHeight;
+//      g2.drawString("WorldY" + player.worldY, x, y);
+//      y += lineHeight;
+//      g2.drawString("Col" + (player.worldX + player.solidArea.x) / tileSize, x, y);
+//      y += lineHeight;
+//      g2.drawString("Row" + (player.worldY + player.solidArea.y) / tileSize, x, y);
+//      y += lineHeight;
+//
+//      g2.drawString("Draw Time: " + passed, x, y);
+//    }
+//
+//    g2.dispose();
+//  }
+
+  public void drawToScreen(){
+    Graphics g = getGraphics();
+    g.drawImage(tempScreen, 0, 0, screenWidth2, screenHeight2, null);
+    g.dispose();
   }
 
   public void playMusic(int i){
