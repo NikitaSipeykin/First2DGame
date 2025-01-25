@@ -30,6 +30,7 @@ Currently implemented:
 - **Full screen mode**
 - **Options menu**
 - **Saving config to a text file**
+- **Game over**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,7 +53,7 @@ Currently implemented:
 18. **Pathfinding (npc)**
 19. **Trade**
 20. **Transitions between maps**
-21. **Game over**
+
 
 ---
 
