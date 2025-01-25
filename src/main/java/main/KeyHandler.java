@@ -111,17 +111,32 @@ public class KeyHandler implements KeyListener {
     if(code == KeyEvent.VK_R){
       gp.tileManager.loadMap("/maps/worldV2.txt");
     }
+
+    //Exit "L"
+    if(code == KeyEvent.VK_L){
+      System.exit(0);
+    }
   }
 
   public void pauseState(int code){
     if(code == KeyEvent.VK_P){
       gp.gameState = gp.playState;
     }
+
+    //Exit "L"
+    if(code == KeyEvent.VK_L){
+      System.exit(0);
+    }
   }
 
   public void dialogueState(int code){
     if (code == KeyEvent.VK_ENTER){
       gp.gameState = gp.playState;
+    }
+
+    //Exit "L"
+    if(code == KeyEvent.VK_L){
+      System.exit(0);
     }
   }
 
