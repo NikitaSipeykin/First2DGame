@@ -28,6 +28,7 @@ Currently implemented:
 - **Breaking objects**
 - **Particles**
 - **Full screen mode**
+- **Options menu**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -51,7 +52,6 @@ Currently implemented:
 19. **Trade**
 20. **Transitions between maps**
 21. **Saving config to a text file**
-22. **Options menu**
 
 ---
 
