@@ -9,6 +9,10 @@ target/
 .idea/compiler.xml
 .idea/libraries/
 .idea/uiDesigner.xml
+.idea/.gitignore
+.idea/encodings.xml
+.idea/misc.xml
+.idea/vcs.xml
 *.iws
 *.iml
 *.ipr

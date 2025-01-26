@@ -31,6 +31,7 @@ Currently implemented:
 - **Options menu**
 - **Saving config to a text file**
 - **Game over**
+- **Transitions between maps**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,8 +53,6 @@ Currently implemented:
 17. **Knockback**
 18. **Pathfinding (npc)**
 19. **Trade**
-20. **Transitions between maps**
-
 
 ---
 
