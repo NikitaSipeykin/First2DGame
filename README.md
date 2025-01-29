@@ -33,6 +33,7 @@ Currently implemented:
 - **Game over**
 - **Transitions between maps**
 - **Trade**
+- **Pathfinding (npc)**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,7 +53,6 @@ Currently implemented:
 15. **Stackable items**
 16. **Object detection**
 17. **Knockback**
-18. **Pathfinding (npc)**
 
 ---
 
