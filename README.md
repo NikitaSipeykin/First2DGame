@@ -34,6 +34,7 @@ Currently implemented:
 - **Transitions between maps**
 - **Trade**
 - **Pathfinding (npc)**
+- **Knockback**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,7 +53,6 @@ Currently implemented:
 14. **Lighting**
 15. **Stackable items**
 16. **Object detection**
-17. **Knockback**
 
 ---
 
