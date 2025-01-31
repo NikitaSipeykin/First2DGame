@@ -35,6 +35,7 @@ Currently implemented:
 - **Trade**
 - **Pathfinding (npc)**
 - **Knockback**
+- **Object detection**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,7 +53,6 @@ Currently implemented:
 13. **Lantern**
 14. **Lighting**
 15. **Stackable items**
-16. **Object detection**
 
 ---
 
