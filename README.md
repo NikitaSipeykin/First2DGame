@@ -36,6 +36,7 @@ Currently implemented:
 - **Pathfinding (npc)**
 - **Knockback**
 - **Object detection**
+- **Stackable items**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,7 +53,6 @@ Currently implemented:
 12. **Day and Night**
 13. **Lantern**
 14. **Lighting**
-15. **Stackable items**
 
 ---
 
