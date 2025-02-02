@@ -38,6 +38,7 @@ Currently implemented:
 - **Object detection**
 - **Stackable items**
 - **Lighting**
+- **Lantern**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,7 +53,6 @@ Currently implemented:
 10. **Mini Map**
 11. **Tile editor**
 12. **Day and Night**
-13. **Lantern**
 
 ---
 
