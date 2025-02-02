@@ -37,6 +37,7 @@ Currently implemented:
 - **Knockback**
 - **Object detection**
 - **Stackable items**
+- **Lighting**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,7 +53,6 @@ Currently implemented:
 11. **Tile editor**
 12. **Day and Night**
 13. **Lantern**
-14. **Lighting**
 
 ---
 
