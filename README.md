@@ -39,6 +39,8 @@ Currently implemented:
 - **Stackable items**
 - **Lighting**
 - **Lantern**
+- **Day and Night**
+- **Sleep**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -52,7 +54,6 @@ Currently implemented:
 9. **Combat system**
 10. **Mini Map**
 11. **Tile editor**
-12. **Day and Night**
 
 ---
 
