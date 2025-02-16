@@ -42,6 +42,7 @@ Currently implemented:
 - **Day and Night**
 - **Sleep**
 - **Tile editor**
+- **Mini Map**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -53,7 +54,6 @@ Currently implemented:
 7. **Save and load**
 8. **Guard & Parry**
 9. **Combat system**
-10. **Mini Map**
 
 ---
 
