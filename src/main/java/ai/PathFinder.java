@@ -141,19 +141,19 @@ public class PathFinder {
       }
 
       //find the best node
-      int betsNodeIndex = 0;
+      int bestNodeIndex = 0;
       int bestNodefCost = 999;
 
       for (int i = 0; i < openList.size(); i++) {
         //check if this node's F cost is better
         if (openList.get(i).fCost < bestNodefCost){
-          betsNodeIndex = i;
+          bestNodeIndex = i;
           bestNodefCost = openList.get(i).fCost;
         }
         //if F cost is equal, check the G cost
         else if (openList.get(i).fCost == bestNodefCost){
-          if (openList.get(i).gCost < openList.get(betsNodeIndex).gCost){
-            betsNodeIndex = i;
+          if (openList.get(i).gCost < openList.get(bestNodeIndex).gCost){
+            bestNodeIndex = i;
           }
         }
       }
@@ -164,7 +164,7 @@ public class PathFinder {
       }
 
       //After the loop, openList[BestNodeIndex] is the next step (= currentNode)
-      currentNode = openList.get(betsNodeIndex);
+      currentNode = openList.get(bestNodeIndex);
 
       if (currentNode == goalNode){
         goalReached = true;
@@ -182,7 +182,6 @@ public class PathFinder {
       openList.add(node);
     }
   }
-
 
   private void trackThePath() {
     Node current = goalNode;

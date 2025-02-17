@@ -43,6 +43,7 @@ Currently implemented:
 - **Sleep**
 - **Tile editor**
 - **Mini Map**
+- **Combat system**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -53,7 +54,6 @@ Currently implemented:
 6. **Advanced dialogs**
 7. **Save and load**
 8. **Guard & Parry**
-9. **Combat system**
 
 ---
 
