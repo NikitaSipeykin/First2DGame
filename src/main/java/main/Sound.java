@@ -13,6 +13,7 @@ public class Sound {
     int volumeScale = 3;
     float volume;
 
+    //todo: Add readable variables for array
     public Sound() {
         soundURL[0] = getClass().getResource("/sound/BlueBoyAdventure.wav");
         soundURL[1] = getClass().getResource("/sound/coin.wav");
@@ -29,6 +30,9 @@ public class Sound {
         soundURL[12] = getClass().getResource("/sound/gameover.wav");
         soundURL[13] = getClass().getResource("/sound/stairs.wav");
         soundURL[14] = getClass().getResource("/sound/sleep.wav");
+        soundURL[15] = getClass().getResource("/sound/blocked.wav");
+        soundURL[16] = getClass().getResource("/sound/parry.wav");
+
     }
 
     public void setFile(int i){

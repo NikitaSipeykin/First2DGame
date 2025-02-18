@@ -44,6 +44,7 @@ Currently implemented:
 - **Tile editor**
 - **Mini Map**
 - **Combat system**
+- **Guard & Parry**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -53,7 +54,6 @@ Currently implemented:
 5. **Enter the dungeon**
 6. **Advanced dialogs**
 7. **Save and load**
-8. **Guard & Parry**
 
 ---
 
