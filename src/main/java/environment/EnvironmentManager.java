@@ -19,6 +19,7 @@ public class EnvironmentManager {
   public void update(){
     lighting.update();
   }
+
   public void draw(Graphics2D g2){
     lighting.draw(g2);
   }
