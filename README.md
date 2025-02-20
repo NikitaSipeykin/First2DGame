@@ -45,6 +45,7 @@ Currently implemented:
 - **Mini Map**
 - **Combat system**
 - **Guard & Parry**
+- **Save and load**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -53,7 +54,6 @@ Currently implemented:
 4. **Dungeons**
 5. **Enter the dungeon**
 6. **Advanced dialogs**
-7. **Save and load**
 
 ---
 
