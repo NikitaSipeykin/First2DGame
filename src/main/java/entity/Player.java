@@ -107,6 +107,26 @@ public class Player extends Entity{
     return defense = dexterity * currentShield.defenseValue;
   }
 
+  public int getCurrentWeaponSLot(){
+    int currentWeaponSlot = 0;
+    for (int i = 0; i < inventory.size(); i++) {
+      if (inventory.get(i) == currentWeapon){
+        currentWeaponSlot = i;
+      }
+    }
+    return currentWeaponSlot;
+  }
+
+  public int getCurrentShieldSLot(){
+    int currentShieldSlot = 0;
+    for (int i = 0; i < inventory.size(); i++) {
+      if (inventory.get(i) == currentShield){
+        currentShieldSlot = i;
+      }
+    }
+    return currentShieldSlot;
+  }
+
   public void getImage(){
     up1 = setup("/player/boyUp1", gp.tileSize, gp.tileSize);
     up2 = setup("/player/boyUp2", gp.tileSize, gp.tileSize);

@@ -91,6 +91,4 @@ public class MON_GreenSlime extends Entity {
       dropItem(new OBJ_ManaCrystal(gp));
     }
   }
-
-
 }
