@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class Sound {
     Clip clip;
-    URL soundURL[] = new URL[30];
+    URL[] soundURL = new URL[30];
     FloatControl fc;
     int volumeScale = 3;
     float volume;
@@ -32,6 +32,7 @@ public class Sound {
         soundURL[14] = getClass().getResource("/sound/sleep.wav");
         soundURL[15] = getClass().getResource("/sound/blocked.wav");
         soundURL[16] = getClass().getResource("/sound/parry.wav");
+        soundURL[17] = getClass().getResource("/sound/speak.wav");
 
     }
 

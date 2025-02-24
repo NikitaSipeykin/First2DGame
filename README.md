@@ -46,6 +46,7 @@ Currently implemented:
 - **Combat system**
 - **Guard & Parry**
 - **Save and load**
+- **Advanced dialogs**
 
 ### ✅ Planned Features:
 1. **Ending**
@@ -53,7 +54,6 @@ Currently implemented:
 3. **Bosses**
 4. **Dungeons**
 5. **Enter the dungeon**
-6. **Advanced dialogs**
 
 ---
 
