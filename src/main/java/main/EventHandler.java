@@ -7,6 +7,7 @@ import java.awt.*;
 public class EventHandler {
   GamePanel gp;
   EventRect[][][] eventRect;
+  Entity eventMaster;
 
   int previousEventX, previousEventY;
   boolean canTouchEvent = true;
@@ -14,6 +15,7 @@ public class EventHandler {
 
   public EventHandler(GamePanel gp) {
     this.gp = gp;
+    eventMaster = new Entity(gp);
 
     eventRect = new EventRect[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
     int map = 0;
@@ -39,8 +41,12 @@ public class EventHandler {
         }
       }
     }
+  }
 
-
+  public void setDialogue(){
+    eventMaster.dialogues[0][0] = "You fall into a pit!";
+    eventMaster.dialogues[1][0] = "You drink the water. \n Your life and mana have been recovered.\n" +
+        "(The progress has been saved)";
   }
 
   public void checkEvent(){
@@ -103,7 +109,7 @@ public class EventHandler {
 
   public void damagePit(int gameState){
     gp.gameState = gameState;
-    gp.ui.currentDialogue = "You fall into a pit!";
+    eventMaster.startDialogue(eventMaster, 0);
     gp.player.life -= 1;
 //    eventRect[col][row].eventDone = true;
     canTouchEvent = false;
@@ -113,8 +119,7 @@ public class EventHandler {
     if (gp.keyH.enterPressed){
       gp.gameState = gameState;
       gp.player.attackCanceled = true;
-      gp.ui.currentDialogue = "You drink the water. \n Your life and mana have been recovered.\n" +
-          "(The progress has been saved)";
+      eventMaster.startDialogue(eventMaster, 1);
       gp.player.life = gp.player.maxLife;
       gp.player.mana = gp.player.maxMana;
       gp.aSetter.setMonster();
