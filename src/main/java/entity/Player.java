@@ -83,6 +83,7 @@ public class Player extends Entity{
     dialogues[0][0] = "You are level " + level + " now!\n" +
         "You feel stronger!";
   }
+
   public void restoreStatus(){
     life = maxLife;
     mana = maxMana;
@@ -469,6 +470,7 @@ public class Player extends Entity{
       gp.playSE(8);
       gp.gameState = gp.dialogueState;
 
+      setDialogue();
       startDialogue(this, 0);
     }
   }
