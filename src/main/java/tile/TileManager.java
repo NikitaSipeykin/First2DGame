@@ -64,6 +64,9 @@ public class TileManager {
 
 //    loadMap("/maps/worldV3.txt", 0);
     loadMap("/Map (Tile editor version)/indoor01.txt", 1);
+    //dungeon
+    loadMap("/Map (Tile editor version)/dungeon01.txt", 2);
+    loadMap("/Map (Tile editor version)/dungeon02.txt", 3);
   }
 
   public void getTileImage(){

@@ -41,11 +41,12 @@ public class EventHandler {
         }
       }
     }
+    setDialogue();
   }
 
   public void setDialogue(){
     eventMaster.dialogues[0][0] = "You fall into a pit!";
-    eventMaster.dialogues[1][0] = "You drink the water. \n Your life and mana have been recovered.\n" +
+    eventMaster.dialogues[1][0] = "You drink the water. \nYour life and mana have been recovered.\n" +
         "(The progress has been saved)";
   }
 
@@ -60,13 +61,14 @@ public class EventHandler {
     }
 
     if (canTouchEvent){
-//      if (hit(0, 27, 16, "right")){damagePit(gp.dialogueState);}
-//      if (hit(0, 23, 19, "any")){damagePit(gp.dialogueState);}
-//      if (hit(0, 27, 16, "right")){teleport(gp.dialogueState);}
       if (hit(0, 23, 12, "up")){healingPool(gp.dialogueState);}
-      else if (hit(0, 10, 39, "any")){teleport(1, 12, 13);}
-      else if (hit(1, 12, 13, "any")){teleport(0, 10, 39);}
+      else if (hit(0, 10, 39, "any")){teleport(1, 12, 13, gp.indoor);} //to merchant's house
+      else if (hit(1, 12, 13, "any")){teleport(0, 10, 39, gp.outside);} //to outside
       else if (hit(1, 12, 9, "up")){speak(gp.npc[1][0]);}
+      else if (hit(0, 12, 9, "any")){teleport(2, 9, 41, gp.dungeon);} //to the dungeon
+      else if (hit(2, 9, 41, "any")){teleport(0, 12, 9, gp.outside);} //to outside
+      else if (hit(2, 8, 7, "any")){teleport(3, 26, 41, gp.dungeon);} //to B2
+      else if (hit(3, 26, 41, "any")){teleport(2, 8, 7, gp.dungeon);} //to B1
     }
   }
 
@@ -97,8 +99,9 @@ public class EventHandler {
     return hit;
   }
 
-  public void teleport(int map, int col, int row){
+  public void teleport(int map, int col, int row, int area){
     gp.gameState = gp.transitionState;
+    gp.nextArea = area;
     tempMap = map;
     tempCol = col;
     tempRow = row;
