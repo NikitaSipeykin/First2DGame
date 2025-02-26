@@ -47,13 +47,13 @@ Currently implemented:
 - **Guard & Parry**
 - **Save and load**
 - **Advanced dialogs**
+- **Enter the dungeon**
+- **Dungeons**
 
 ### ✅ Planned Features:
 1. **Ending**
 2. **Cutscenes**
 3. **Bosses**
-4. **Dungeons**
-5. **Enter the dungeon**
 
 ---
 
