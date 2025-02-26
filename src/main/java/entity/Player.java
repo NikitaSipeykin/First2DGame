@@ -99,7 +99,7 @@ public class Player extends Entity{
     inventory.add(currentShield);
     inventory.add(new OBJ_Key(gp));
     inventory.add(new OBJ_Key(gp));
-    inventory.add(new OBJ_Pickaxe(gp));
+    inventory.add(new OBJ_Axe(gp));
   }
 
   public int getAttack(){
@@ -382,13 +382,13 @@ public class Player extends Entity{
   }
 
   public void interactNPC(int i){
-    if (gp.keyH.enterPressed){
-      if (i != 999){
+    if (i != 999){
+      if (gp.keyH.enterPressed){
         attackCanceled = true;
         gp.npc[gp.currentMap][i].speak();
       }
+      gp.npc[gp.currentMap][i].move(direction);
     }
-
   }
 
   public void contactMonster(int i){
@@ -453,6 +453,7 @@ public class Player extends Entity{
       generateParticle(gp.iTile[gp.currentMap][i], gp.iTile[gp.currentMap][i]);
 
       if (gp.iTile[gp.currentMap][i].life == 0){
+//        gp.iTile[gp.currentMap][i].checkDrop();
         gp.iTile[gp.currentMap][i] = gp.iTile[gp.currentMap][i].getDestroyedForm();
       }
     }

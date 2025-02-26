@@ -2,8 +2,12 @@ package tile_interactive;
 
 import entity.Entity;
 import main.GamePanel;
+import object.OBJ_Coin_Bronze;
+import object.OBJ_Heart;
+import object.OBJ_ManaCrystal;
 
 import java.awt.*;
+import java.util.Random;
 
 public class IT_DestructibleWall extends InteractiveTile{
   GamePanel gp;
@@ -66,4 +70,14 @@ public class IT_DestructibleWall extends InteractiveTile{
     int maxLife = 20;
     return maxLife;
   }
+
+//  public void checkDrop() {
+//    //cast a die
+//    int i = new Random().nextInt(100)+1;
+//
+//    //set the wall drop
+//    if(i < 80){
+//      dropItem(new OBJ_Coin_Bronze(gp));
+//    }
+//  }
 }

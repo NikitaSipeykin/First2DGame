@@ -23,6 +23,7 @@ public class Entity {
   public boolean collision = false;
   public String[][] dialogues = new String[20][20];
   public Entity attacker;
+  public Entity linkedEntity;
 
   //state
   public int worldX, worldY;
@@ -176,6 +177,8 @@ public class Entity {
   public void setLoot(Entity loot){}
 
   public void setAction(){}
+
+  public void move(String direction){}
 
   public void damageReaction(){}
 

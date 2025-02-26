@@ -52,6 +52,7 @@ public class NPC_OldMan extends Entity{
     dialogues[2][0] = "I wonder how to open that door...";
   }
 
+  @Override
   public void setAction(){
     if (onPath){
       int goalCol = 12;

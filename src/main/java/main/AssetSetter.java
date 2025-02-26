@@ -1,6 +1,7 @@
 package main;
 
 
+import entity.NPC_BigRock;
 import entity.NPC_Merchant;
 import entity.NPC_OldMan;
 import monster.MON_GreenSlime;
@@ -9,6 +10,7 @@ import monster.Mon_Orc;
 import object.*;
 import tile_interactive.IT_DestructibleWall;
 import tile_interactive.IT_DryTree;
+import tile_interactive.IT_MetalPlate;
 
 public class AssetSetter {
   GamePanel gp;
@@ -86,6 +88,11 @@ public class AssetSetter {
     gp.obj[mapNum][i].worldX = gp.tileSize*27;
     gp.obj[mapNum][i].worldY = gp.tileSize*15;
     i++;
+
+    gp.obj[mapNum][i] = new OBJ_DoorIron(gp);
+    gp.obj[mapNum][i].worldX = gp.tileSize*18;
+    gp.obj[mapNum][i].worldY = gp.tileSize*23;
+    i++;
   }
 
   public void setNPC(){
@@ -101,6 +108,21 @@ public class AssetSetter {
     gp.npc[mapNum][i] = new NPC_Merchant(gp);
     gp.npc[mapNum][i].worldX = gp.tileSize*12;
     gp.npc[mapNum][i].worldY = gp.tileSize*7;
+    i++;
+
+    mapNum = 2;
+    i = 0;
+    gp.npc[mapNum][i] = new NPC_BigRock(gp);
+    gp.npc[mapNum][i].worldX = gp.tileSize*20;
+    gp.npc[mapNum][i].worldY = gp.tileSize*25;
+    i++;
+    gp.npc[mapNum][i] = new NPC_BigRock(gp);
+    gp.npc[mapNum][i].worldX = gp.tileSize*11;
+    gp.npc[mapNum][i].worldY = gp.tileSize*18;
+    i++;
+    gp.npc[mapNum][i] = new NPC_BigRock(gp);
+    gp.npc[mapNum][i].worldX = gp.tileSize*23;
+    gp.npc[mapNum][i].worldY = gp.tileSize*14;
     i++;
   }
 
@@ -174,6 +196,7 @@ public class AssetSetter {
     mapNum = 2;
     i = 0;
 
+    //wall
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 18, 30); i++;
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 17, 31); i++;
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 17, 32); i++;
@@ -191,5 +214,10 @@ public class AssetSetter {
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 22, 28); i++;
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 30, 28); i++;
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 32, 28); i++;
+
+    //metal plate
+    gp.iTile[mapNum][i] = new IT_MetalPlate(gp, 20, 22); i++;
+    gp.iTile[mapNum][i] = new IT_MetalPlate(gp, 8, 17); i++;
+    gp.iTile[mapNum][i] = new IT_MetalPlate(gp, 39, 31); i++;
   }
 }
