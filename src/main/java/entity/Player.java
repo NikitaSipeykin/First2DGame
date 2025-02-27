@@ -71,6 +71,7 @@ public class Player extends Entity{
   }
 
   public void setDefaultPositions(){
+    gp.currentMap = 0;
     worldX = gp.tileSize * 23;
     worldY = gp.tileSize * 21;
     direction = "down";
@@ -344,11 +345,13 @@ public class Player extends Entity{
     if (mana > maxMana){
       mana = maxMana;
     }
-    if (life <= 0){
-      gp.gameState = gp.gameOverState;
-      gp.ui.commandNum = -1;
-      gp.stopMusic();
-      gp.playSE(12);
+    if (!keyH.godModeOn){
+      if (life <= 0){
+        gp.gameState = gp.gameOverState;
+        gp.ui.commandNum = -1;
+        gp.stopMusic();
+        gp.playSE(12);
+      }
     }
   }
 
@@ -631,8 +634,5 @@ public class Player extends Entity{
 
     //reset alpha
     g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
-
-    //debug
-
   }
 }

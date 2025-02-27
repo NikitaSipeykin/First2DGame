@@ -7,7 +7,8 @@ public class KeyHandler implements KeyListener {
   GamePanel gp;
   public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed, shotKeyPressed, spacePressed;
   //debug
-  boolean showDebugText = false;
+  public boolean showDebugText = false;
+  public boolean godModeOn = false;
 
   public KeyHandler(GamePanel gp){
     this.gp = gp;
@@ -151,10 +152,15 @@ public class KeyHandler implements KeyListener {
         case 0: gp.tileManager.loadMap("/maps/worldV3.txt",0); break;
         case 1: gp.tileManager.loadMap("/maps/interior01.txt",1); break;
       }
-
     }
-
-
+    if(code == KeyEvent.VK_G){
+      if (!godModeOn){
+        godModeOn = true;
+      }
+      else {
+        godModeOn = false;
+      }
+    }
   }
 
   public void pauseState(int code){

@@ -49,11 +49,11 @@ Currently implemented:
 - **Advanced dialogs**
 - **Enter the dungeon**
 - **Dungeons**
+- **Bosses**
 
 ### ✅ Planned Features:
 1. **Ending**
 2. **Cutscenes**
-3. **Bosses**
 
 ---
 
