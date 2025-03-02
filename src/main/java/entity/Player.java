@@ -261,10 +261,8 @@ public class Player extends Entity{
         //check interactive class collision
         gp.cChecker.checkEntity(this, gp.iTile);
 
-
         //check event
         gp.eHandler.checkEvent();
-
 
         //if collision is false player can't move
         if (!collisionON && !keyH.enterPressed){
@@ -325,7 +323,6 @@ public class Player extends Entity{
       shotAvailableCounter = 0;
       gp.playSE(10);
     }
-
 
       //this needs to be outside of key if statement!
     if(invincible){
@@ -475,6 +472,7 @@ public class Player extends Entity{
       level++;
       nextLevelExp = nextLevelExp * 2;
       maxLife += 2;
+      maxMana += 1;
       strength++;
       dexterity++;
       attack = getAttack();
