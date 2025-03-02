@@ -50,10 +50,10 @@ Currently implemented:
 - **Enter the dungeon**
 - **Dungeons**
 - **Bosses**
+- **Cutscenes**
 
 ### ✅ Planned Features:
 1. **Ending**
-2. **Cutscenes**
 
 ---
 
