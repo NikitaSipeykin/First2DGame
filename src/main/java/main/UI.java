@@ -116,12 +116,21 @@ public class UI {
         int x = gp.tileSize / 2;
         int y = gp.tileSize / 2;
         int i = 0;
+        int icnSize = 32;
+        int manaStartX = (gp.tileSize/2)-5;
+        int manaStartY = 0;
 
         //draw max life
         while (i < gp.player.maxLife / 2){
-            g2.drawImage(heart_blank, x, y, null);
+            g2.drawImage(heart_blank, x, y, icnSize, icnSize, null);
             i++;
-            x += gp.tileSize;
+            x += icnSize;
+            manaStartY = y + 32;
+
+            if ( i % 8 == 0){
+                x = gp.tileSize / 2;
+                y += icnSize;
+            }
         }
 
         //reset
@@ -131,33 +140,45 @@ public class UI {
 
         //draw current life
         while (i < gp.player.life){
-            g2.drawImage(heart_half, x, y, null);
+            g2.drawImage(heart_half, x, y, icnSize, icnSize, null);
             i++;
             if (i < gp.player.life){
-                g2.drawImage(heart_full, x, y, null);
+                g2.drawImage(heart_full, x, y, icnSize, icnSize, null);
             }
             i++;
-            x += gp.tileSize;
+            x += icnSize;
+
+            if ( i % 16 == 0){
+                x = gp.tileSize/2;
+                y += icnSize;
+            }
         }
 
         //draw max mana
-        x = (gp.tileSize / 2)-5;
-        y = (int)(gp.tileSize * 1.5);
         i = 0;
         while (i < gp.player.maxMana){
-            g2.drawImage(crystal_blank, x, y, null);
+            g2.drawImage(crystal_blank, manaStartX, manaStartY, icnSize, icnSize, null);
             i++;
-            x += 35;
+            manaStartX += icnSize/2 + 4;
+
+            if ( i % 8 == 0){
+                manaStartX = gp.tileSize / 2;
+                manaStartY += icnSize;
+            }
         }
 
         //draw mana
-        x = (gp.tileSize / 2)-5;
-        y = (int)(gp.tileSize * 1.5);
+        manaStartX = (gp.tileSize / 2)-5;
+
         i = 0;
         while (i < gp.player.mana){
-            g2.drawImage(crystal_full, x, y, null);
+            g2.drawImage(crystal_full, manaStartX, manaStartY, icnSize, icnSize, null);
             i++;
-            x += 35;
+            manaStartX += icnSize/2 + 4;
+            if ( i % 8 == 0){
+                manaStartX = gp.tileSize / 2;
+                manaStartY += icnSize;
+            }
         }
     }
 
