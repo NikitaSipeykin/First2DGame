@@ -264,8 +264,9 @@ public class Player extends Entity{
         //check event
         gp.eHandler.checkEvent();
 
+      //todo: debug delete in release
         //if collision is false player can't move
-        if (!collisionON && !keyH.enterPressed){
+        if (!collisionON && !keyH.enterPressed || keyH.godModeOn){
           switch (direction){
             case "up": worldY -= speed; break;
             case "down": worldY += speed; break;
@@ -424,6 +425,10 @@ public class Player extends Entity{
         int damage = attack - gp.monster[gp.currentMap][i].defense;
         if (damage < 0){
           damage = 0;
+        }
+        //todo: debug delete in release
+        if (keyH.godModeOn){
+          damage = 1000;
         }
 
         gp.monster[gp.currentMap][i].life -= damage;

@@ -99,6 +99,11 @@ public class AssetSetter {
     gp.obj[mapNum][i].worldX = gp.tileSize*25;
     gp.obj[mapNum][i].worldY = gp.tileSize*15;
     i++;
+
+    gp.obj[mapNum][i] = new OBJ_BlueHeart(gp);
+    gp.obj[mapNum][i].worldX = gp.tileSize*25;
+    gp.obj[mapNum][i].worldY = gp.tileSize*8;
+    i++;
   }
 
   public void setNPC(){
