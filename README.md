@@ -51,11 +51,7 @@ Currently implemented:
 - **Dungeons**
 - **Bosses**
 - **Cutscenes**
-
-### ✅ Planned Features:
-1. **Ending**
-
----
+- **Ending**
 
 ## 🔧 Technical Details
 - **Language:** Java
