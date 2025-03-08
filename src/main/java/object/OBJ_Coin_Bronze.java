@@ -14,7 +14,17 @@ public class OBJ_Coin_Bronze extends Entity {
     type = type_pickupOnly;
     name = objName;
     down1 = setup("/objects/coin_bronze", gp.tileSize, gp.tileSize);
-    value = 1;
+    value = 7;
+  }
+
+  public OBJ_Coin_Bronze(GamePanel gp, int cost){
+    super(gp);
+    this.gp = gp;
+
+    type = type_pickupOnly;
+    name = objName;
+    down1 = setup("/objects/coin_bronze", gp.tileSize, gp.tileSize);
+    value = cost;
   }
 
   @Override

@@ -156,15 +156,17 @@ public class UI {
         }
 
         //draw max mana
+        y = manaStartY;
         i = 0;
         while (i < gp.player.maxMana){
-            g2.drawImage(crystal_blank, manaStartX, manaStartY, icnSize, icnSize, null);
+
+            g2.drawImage(crystal_blank, manaStartX, y, icnSize, icnSize, null);
             i++;
             manaStartX += icnSize/2 + 4;
 
             if ( i % 8 == 0){
                 manaStartX = gp.tileSize / 2;
-                manaStartY += icnSize;
+                y += icnSize;
             }
         }
 
@@ -763,6 +765,7 @@ public class UI {
         textY = frameY + gp.tileSize;
         g2.drawString(text, textX, textY);
 
+        //todo: add more buttons
         textX = frameX + gp.tileSize;
         textY += gp.tileSize;
         g2.drawString("Move", textX, textY);
