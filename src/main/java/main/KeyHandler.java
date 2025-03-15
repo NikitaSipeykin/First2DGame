@@ -149,8 +149,8 @@ public class KeyHandler implements KeyListener {
     }
     if(code == KeyEvent.VK_R){
       switch (gp.currentMap){
-        case 0: gp.tileManager.loadMap("/maps/worldV3.txt",0); break;
-        case 1: gp.tileManager.loadMap("/maps/interior01.txt",1); break;
+        case 0: gp.tileManager.loadMap("/Map (Tile editor version)/worldmap.txt",0); break;
+        case 1: gp.tileManager.loadMap("/Map (Tile editor version)/indoor01.txt",1); break;
       }
     }
     if(code == KeyEvent.VK_G){

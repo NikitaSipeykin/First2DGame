@@ -42,6 +42,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Project ###
 /src/main/resources/maps/Untitled.txt
 /src/main/resources/maps/UntitledTileData.txt
 /save.dat
+/jre-minimal/

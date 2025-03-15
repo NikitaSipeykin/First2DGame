@@ -154,13 +154,15 @@ public class MON_SkeletonLord extends Entity {
 
     //set the monster drop
     if(i < 50){
-      dropItem(new OBJ_Coin_Bronze(gp));
+      dropItem(new OBJ_Coin_Bronze(gp, 100));
     }
     if (i >= 50 && i < 75){
       dropItem(new OBJ_Heart(gp));
+      dropItem(new OBJ_Coin_Bronze(gp, 100));
     }
     if (i >= 75 ){
       dropItem(new OBJ_ManaCrystal(gp));
+      dropItem(new OBJ_Coin_Bronze(gp, 100));
     }
   }
 
