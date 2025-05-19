@@ -10,6 +10,7 @@ import object.*;
 import tile_interactive.IT_DestructibleWall;
 import tile_interactive.IT_DryTree;
 import tile_interactive.IT_MetalPlate;
+import tile_interactive.IT_Water;
 
 public class AssetSetter {
   GamePanel gp;
@@ -210,7 +211,6 @@ public class AssetSetter {
     gp.iTile[mapNum][i] = new IT_DryTree(gp, 12, 41); i++;
     gp.iTile[mapNum][i] = new IT_DryTree(gp, 11, 41); i++;
     gp.iTile[mapNum][i] = new IT_DryTree(gp, 10, 41); i++;
-
     //dungeon
     mapNum = 2;
     i = 0;
@@ -233,6 +233,8 @@ public class AssetSetter {
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 22, 28); i++;
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 30, 28); i++;
     gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 32, 28); i++;
+
+
 
     //metal plate
     gp.iTile[mapNum][i] = new IT_MetalPlate(gp, 20, 22); i++;

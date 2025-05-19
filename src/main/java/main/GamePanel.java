@@ -7,6 +7,7 @@ import entity.Player;
 import environment.EnvironmentManager;
 import tile.Map;
 import tile.TileManager;
+import tile_interactive.IT_Water;
 import tile_interactive.InteractiveTile;
 
 import javax.swing.*;
@@ -52,6 +53,7 @@ public class GamePanel extends JPanel implements Runnable{
   Config config = new Config(this);
   public PathFinder pFinder = new PathFinder(this);
   EnvironmentManager eManager = new EnvironmentManager(this);
+  public IT_Water[][] iWater = new IT_Water[maxMap][5000];
   Map map = new Map(this);
   SaveLoad saveLoad = new SaveLoad(this);
   public EntityGenerator eGenerator = new EntityGenerator(this);
@@ -63,7 +65,7 @@ public class GamePanel extends JPanel implements Runnable{
   public Entity[][] obj = new Entity[maxMap][20];
   public Entity[][] npc = new Entity[maxMap][10];
   public Entity[][] monster = new Entity[maxMap][20];
-  public InteractiveTile iTile[][] = new InteractiveTile[maxMap][50];
+  public InteractiveTile[][] iTile = new InteractiveTile[maxMap][50];
   public Entity[][] projectile = new Entity[maxMap][20];
 //  public ArrayList<Entity> projectileList = new ArrayList<>();
   public ArrayList<Entity> particleList = new ArrayList<>();
@@ -232,6 +234,11 @@ public class GamePanel extends JPanel implements Runnable{
           iTile[currentMap][i].update();
         }
       }
+      for (int i = 0; i < iWater[1].length; i++) {
+        if (iWater[currentMap][i] != null){
+          iWater[currentMap][i].update();
+        }
+      }
       eManager.update();
     }
     if (gameState == pauseState){
@@ -263,6 +270,12 @@ public class GamePanel extends JPanel implements Runnable{
       for (int i = 0; i < iTile[1].length; i++) {
         if (iTile[currentMap][i] != null){
           iTile[currentMap][i].draw(g2);
+        }
+      }
+
+      for (int i = 0; i < iWater[1].length; i++) {
+        if (iWater[currentMap][i] != null){
+          iWater[currentMap][i].draw(g2);
         }
       }
 

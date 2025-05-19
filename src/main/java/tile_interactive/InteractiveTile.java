@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 public class InteractiveTile extends Entity {
   GamePanel gp;
   public boolean destructible = false;
+  public boolean animated = false;
 
   public InteractiveTile(GamePanel gp, int col, int row) {
     super(gp);
@@ -24,7 +25,6 @@ public class InteractiveTile extends Entity {
 
   public InteractiveTile getDestroyedForm(){
     InteractiveTile tile = null;
-
     return tile;
   }
 
@@ -50,8 +50,11 @@ public class InteractiveTile extends Entity {
         worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
         worldY - gp.tileSize < gp.player.worldY + gp.player.screenY){
 
-
-      g2.drawImage(down1, screenX, screenY,null);
+      if (animated && spriteNumber == 2){
+        g2.drawImage(down2, screenX, screenY,null);
+      }else {
+        g2.drawImage(down1, screenX, screenY,null);
+      }
     }
   }
 }
