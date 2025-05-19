@@ -23,7 +23,7 @@ public class TileManager {
     this.gp = gp;
 
     //read tile data file
-    InputStream is = getClass().getResourceAsStream("/Map (Tile editor version)/tiledata.txt");
+    InputStream is = getClass().getResourceAsStream("/Map (Tile editor version)/tiledata_my.txt");
     BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
     //getting tile names and collision info from the file
@@ -60,7 +60,7 @@ public class TileManager {
       e.printStackTrace();
     }
 
-    loadMap("/Map (Tile editor version)/worldmap.txt", 0);
+    loadMap("/Map (Tile editor version)/worldmap_my.txt", 0);
 
 //    loadMap("/maps/worldV3.txt", 0);
     loadMap("/Map (Tile editor version)/indoor01.txt", 1);
@@ -92,7 +92,7 @@ public class TileManager {
     UtilityTool uTool = new UtilityTool();
     try {
       tile[index] = new Tile();
-      tile[index].image = ImageIO.read(getClass().getResourceAsStream("/tiles/New version (with numbers)/" + imageName));
+      tile[index].image = ImageIO.read(getClass().getResourceAsStream("/tiles/my version/solid/" + imageName));
       tile[index].image = uTool.scaleImage(tile[index].image, gp.tileSize, gp.tileSize);
       tile[index].collision = collision;
     }catch (IOException e){

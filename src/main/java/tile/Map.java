@@ -1,6 +1,7 @@
 package tile;
 
 import main.GamePanel;
+import tile_interactive.IT_Water;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -22,6 +23,7 @@ public class Map extends TileManager{
     int worldMapHeight = gp.tileSize * gp.maxWorldRow;
 
     for (int i = 0; i < gp.maxMap; i++) {
+      int waterTileCounter = 0;
       worldMap[i] = new BufferedImage(worldMapWith, worldMapHeight, BufferedImage.TYPE_INT_ARGB);
       Graphics2D g2 = (Graphics2D) worldMap[i].createGraphics();
 
@@ -32,6 +34,18 @@ public class Map extends TileManager{
         int x = gp.tileSize * col;
         int y = gp.tileSize * row;
         g2.drawImage(tile[tileNum].image, x, y, null);
+
+        if (tileNum > 0 && tileNum <= 15
+            || tileNum > 20 && tileNum <= 28
+            || tileNum > 29 && tileNum <= 35
+            || tileNum > 40 && tileNum <= 55
+            || tileNum > 60 && tileNum <= 64
+            || tileNum > 71 && tileNum <= 73
+            || tileNum > 79 && tileNum <= 82
+            || tileNum == 68){
+          gp.iWater[i][waterTileCounter] = new IT_Water(gp, col, row, tileNum);
+          waterTileCounter++;
+        }
 
         col++;
         if (col == gp.maxWorldCol){
